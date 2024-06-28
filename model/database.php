@@ -1,6 +1,6 @@
 <?php
 
-require_once $_SERVER['DOCUMENT_ROOT'] . '/cfg/config.php';
+require_once $_SERVER['DOCUMENT_ROOT'] . '/cfg/config-dev.php';
 
 /**
  * @deprecated Mieux vaut utiliser libDb::connect()

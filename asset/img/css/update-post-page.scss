@@ -1,0 +1,48 @@
+#update-post {
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 1em;
+    width: 500px;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+
+
+
+
+    #update-text-area {
+        padding: 1em;
+        height: 200px;
+        width: 400px;
+        margin-bottom: 20px;
+    }
+
+
+
+    #update-blog-photo-container {
+        //border: 1px solid red;
+        display: flex;
+        justify-content: space-between;
+        gap: 20px;
+
+    }
+
+
+    .center-button {
+        margin: 10px;
+        display: flex;
+        justify-content: center;
+
+
+        .submit {
+            width: 200px;
+            height: 40px;
+            background-color: rgb(209, 173, 54);
+            border-radius: 5px;
+            display: block;
+
+
+        }
+    }
+}

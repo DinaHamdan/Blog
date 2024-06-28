@@ -1,0 +1,96 @@
+#all-posts-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+#all-posts-container #post-container {
+  border: 2px solid rgba(0, 0, 0, 0.295);
+  border-radius: 5px;
+  width: 70%;
+  display: flex;
+  flex-direction: row;
+  gap: 100px;
+  padding: 2em;
+  margin-left: 20px;
+}
+#all-posts-container #post-container #text-blog {
+  width: 50%;
+  margin: 10px;
+  text-align: justify;
+}
+#all-posts-container #post-container #text-blog #blog-title {
+  padding: 10px;
+}
+#all-posts-container #post-container #text-blog #blog-info {
+  border: 1px solid rgba(0, 0, 0, 0.295);
+  margin: 10px;
+  width: 400px;
+}
+#all-posts-container #post-container #text-blog #blog-info p {
+  padding: 10px;
+}
+#all-posts-container #post-container #blog-image {
+  width: 400px;
+  height: 300px;
+}
+#all-posts-container #modify-article-container {
+  padding: 5px;
+  width: 250px;
+  border: 1px solid black;
+  margin-left: 30px;
+  display: flex;
+  gap: 20px;
+}
+#all-posts-container #modify-article-container a {
+  color: red;
+}
+#all-posts-container #comment-parent-container {
+  border: 1px solid rgba(0, 0, 0, 0.295);
+  width: 500px;
+  margin-left: 50px;
+  padding: 10px;
+}
+#all-posts-container #comment-parent-container #comment-container {
+  padding: 5px;
+  margin: 5px;
+  border: 1px solid gray;
+  width: 400px;
+}
+#all-posts-container #comment-parent-container #comment-container #user-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 10px;
+}
+#all-posts-container #comment-parent-container #comment-container #user-container #user-avatar {
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+}
+#all-posts-container #comment-parent-container #comment-container #user-container #comment-content {
+  text-align: justify;
+  width: 200px;
+}
+#all-posts-container #comment-parent-container #comment-container #user-container #comment-content .time {
+  font-size: 0.7em;
+}
+#all-posts-container #comment-parent-container #remove-comment-container {
+  display: flex;
+  justify-content: center;
+}
+#all-posts-container #comment-parent-container #leave-comment-container {
+  padding: 5px;
+}
+#all-posts-container #comment-parent-container #leave-comment-container #like-logo {
+  width: 50px;
+  height: 50px;
+}
+#all-posts-container #comment-parent-container #leave-comment-container .submit {
+  width: 100px;
+  height: 20px;
+  background-color: rgb(209, 173, 54);
+  border-radius: 5px;
+}/*# sourceMappingURL=list-post-page.css.map */

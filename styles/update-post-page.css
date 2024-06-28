@@ -1,0 +1,33 @@
+#update-post {
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: 1em;
+  width: 500px;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+#update-post #update-text-area {
+  padding: 1em;
+  height: 200px;
+  width: 400px;
+  margin-bottom: 20px;
+}
+#update-post #update-blog-photo-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+#update-post .center-button {
+  margin: 10px;
+  display: flex;
+  justify-content: center;
+}
+#update-post .center-button .submit {
+  width: 200px;
+  height: 40px;
+  background-color: rgb(209, 173, 54);
+  border-radius: 5px;
+  display: block;
+}/*# sourceMappingURL=update-post-page.css.map */

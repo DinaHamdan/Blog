@@ -1,0 +1,22 @@
+@use 'header.scss';
+@use 'footer.scss';
+@use 'welcome-page.scss';
+@use 'login-page.scss';
+@use 'inscription-page.scss';
+@use 'create-post-page.scss';
+@use 'update-post-page.scss';
+@use 'list-post-page.scss';
+@use 'list-members-page.scss';
+
+* {
+    padding: 0;
+    margin: 0;
+
+}
+
+
+
+body {
+    font-family: "Albert Sans", sans-serif;
+
+}

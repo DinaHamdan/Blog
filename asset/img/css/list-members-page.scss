@@ -1,0 +1,34 @@
+#list-member-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    margin-bottom: 100px;
+
+    #member-container {
+        border: 1px solid black;
+        border-radius: 5px;
+        padding: 10px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+
+    #member-description {
+        width: 150px;
+        height: 200px;
+        text-align: justify;
+    }
+
+    #profile-photo {
+        padding: 10px;
+        width: 150px;
+        height: 150px;
+        border-radius: 10px;
+    }
+
+    a:visited {
+        color: blue;
+    }
+
+}

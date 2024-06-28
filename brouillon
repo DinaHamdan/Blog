@@ -1,0 +1,110 @@
+//List comment
+static function getComment($idArticle): array
+{
+$query = 'SELECT commentaire.id, commentaire.phrase, commentaire.idArticle, commentaire.idUtilisateur, commentaire.date_time_column';
+$query .= ' FROM commentaire ';
+$query .= 'WHERE commentaire.idArticle= :id';
+
+$statement = libDb::connect()->prepare($query);
+$statement->bindParam(':id', $idArticle);
+// - Exécute la requête
+$successOrFailure = $statement->execute();
+$listPost = $statement->fetch(PDO::FETCH_ASSOC);
+
+// Ajoute une colonne avec la date de formatée
+$listPostWithAdditionalInfo = [];
+foreach ($listPost as $post) {
+$post['banane'] = date('Y-m-d h:i:s', strtotime($post['date_time_column']));
+$listPostWithAdditionalInfo[] = $post;
+}
+
+return $listPostWithAdditionalInfo;
+}
+}
+
+
+<?php foreach ($args['session']['listUser'] as $args['session']['user']) { ?>
+    <div>
+
+        <p><?= $args['session']['user']['email'] ?></p>
+        <img src="data:image/png;base64,<?= base64_encode($args['session']['user']['avatar']) ?>" alt="user-avatar">
+    </div>
+<?php } ?>
+
+
+<?php
+
+// I think I should remove this 
+require_once $_SERVER['DOCUMENT_ROOT'] . '/model/database.php';
+require_once $_SERVER['DOCUMENT_ROOT'] . '/model/lib/post.php';
+require_once $_SERVER['DOCUMENT_ROOT'] . '/model/lib/user.php';
+
+require_once $_SERVER['DOCUMENT_ROOT'] . '/ctrl/ctrl.php';
+
+
+class ListComments extends Ctrl
+{
+    function do(): void
+    {
+        //Get user
+        // $userId = $_GET['hiddenUserID'];
+        // $listUser = LibUser::getUserProfile($userId);
+        // $_SESSION['listUser'] = $listUser;
+
+        // //Get comment 
+        // $idArticle = $_GET['hiddenPostId'];
+        // $listComment = LibPost::getComment($idArticle);
+        // $_SESSION['listComment'] = $listComment;
+    }
+
+    function renderView(): void
+    {
+        $args = $this->viewArgs;
+
+        include $_SERVER['DOCUMENT_ROOT'] . '/view/partial/header.php';
+        include $_SERVER['DOCUMENT_ROOT'] . '/view/post/list-post-display.php';
+        include $_SERVER['DOCUMENT_ROOT'] . '/view/partial/footer.php';
+    }
+    function getPageTitle(): string
+    {
+        return 'Blog posts!';
+    }
+}
+
+$ctrl = new ListComments();
+
+$ctrl->execute();
+
+
+
+//vue
+<input type="hidden" name="hiddenPostId" value="<?= $args['session']['post']['id'] ?>">
+
+
+
+
+//Members
+
+<div>
+
+<p>Members</p>
+
+<?php foreach ($args['session']['listUser'] as $args['session']['user']) { ?>
+    <p>Name: <?= $args['session']['user']['email'] ?></p>
+    <img src="data:image/png;base64,<?= base64_encode($args['session']['user']['avatar']) ?>" alt="user-Avatar">
+
+    <?php if (($args['session']['user']['codeRole']) == 'ADM') { ?>
+        <a href="/ctrl/post/remove-user.php?id=<?= $args['session']['user']['id'] ?>" onclick="return confirm('are you sure you want to remove?');">Remove</a>
+
+    <?php  } ?>
+
+<?php } ?>
+
+</div>
+
+
+<?php if (($args['session']['post']['likes']) == null) { ?>
+    <p> Likes : 0 </p>
+<?php     } else { ?>
+    <p>Likes:<?= count($args['session']['post']['likes']) ?> </p>
+<?php     } ?>

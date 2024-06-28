@@ -1,0 +1,30 @@
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+
+    #welcome-container {
+        border: 1px solid black;
+        width: 400px;
+        height: 200px;
+        border-radius: 5px;
+        background-color: azure;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 50px;
+        text-align: center;
+        //padding: 20px;
+        padding: 2em;
+
+        a {
+            text-decoration: none;
+            color: rgb(209, 173, 54);
+            font-size: 1.5em;
+        }
+
+
+    }
+}

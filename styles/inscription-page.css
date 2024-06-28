@@ -1,0 +1,21 @@
+#inscription-form {
+  border: 1px solid black;
+  border-radius: 5px;
+  background-color: azure;
+  padding: 2em;
+  width: 400px;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  gap: 20px;
+  font-size: 1.2em;
+}
+#inscription-form .submit {
+  width: 200px;
+  height: 40px;
+  background-color: rgb(209, 173, 54);
+  border-radius: 5px;
+}/*# sourceMappingURL=inscription-page.css.map */
